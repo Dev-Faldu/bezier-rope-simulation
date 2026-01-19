@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 190 95% 55%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 220 15% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 38 95% 55%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 190 95% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom visualization colors */
+    --curve: 190 95% 55%;
+    --curve-glow: 190 95% 65%;
+    --control-point: 38 95% 55%;
+    --control-point-glow: 38 95% 65%;
+    --tangent: 320 90% 60%;
+    --anchor: 150 80% 50%;
+    --grid: 220 15% 15%;
+
+    /* Fonts */
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Space Grotesk', sans-serif;
+  }
+
+  .dark {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-display);
+  }
+
+  code, pre {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .curve-glow {
+    filter: drop-shadow(0 0 8px hsl(var(--curve) / 0.6));
+  }
+
+  .control-glow {
+    filter: drop-shadow(0 0 12px hsl(var(--control-point) / 0.7));
+  }
+}
